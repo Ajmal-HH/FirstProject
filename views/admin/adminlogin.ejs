@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="admin-assets/css/adminlogin.css">
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="admin-assets/imgs/theme/admin.png" alt="">
+        </div>
+        <div class="text-center mt-4 name">
+            Admin Login
+        </div>
+        <form class="p-3 mt-3" action="/admin/admin" method="post">
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="adminname" id="userName" placeholder="AdminName" value="ajmal" required>
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Password" value="ajmal@123" required>
+            </div>
+            <p class="pclass"><%=(typeof msg!=='undefined' )?msg:""%></p>
+            <button class="btn mt-3" type="submit">Login</button>
+            
+
+            
+        </form>
+      
+    </div>
+</body>
+</html>

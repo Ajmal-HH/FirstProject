@@ -1,0 +1,104 @@
+
+  /* Body and page background */
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+  }
+
+  /* Header navigation */
+  .colorlib-nav {
+      background-color: #333;
+      color: white;
+  }
+
+  /* Page content */
+  .content-main {
+      padding: 20px;
+  }
+
+  /* Card styles */
+  .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+  }
+
+  /* Buttons */
+  .btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle; /* Center table data vertically */
+
+    
+}
+td{
+    padding-left: 110px;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+  /* Progress bar */
+  #progressbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      color: white;
+  }
+
+  #progressbar li {
+      font-size: 0.8rem;
+      width: 25%;
+      float: left;
+      position: relative;
+      font-weight: 400;
+      color: white;
+  }
+
+  #progressbar li:before {
+      content: "";
+      color: white;
+      width: 20px;
+      height: 20px;
+      margin-left: 0px !important;
+  }
+
+  #progressbar li:after {
+      content: '';
+      height: 3px;
+      background: rgba(151, 149, 149, 0.651);
+      position: absolute;
+      left: 0%;
+      right: 0%;
+      margin-bottom: 2vh;
+      top: 8px;
+      z-index: 1;
+  }
+
+  /* Modal */
+  .modal-content {
+      background-color: #42469d;
+      border-color: #42469d;
+      border-radius: 1rem;
+  }
+  

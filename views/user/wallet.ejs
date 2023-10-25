@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wallet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/homeStyle.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/shop.css" />
+    <link rel="stylesheet" href="/cartStyle.css" />
+    <link href="/main2.css" rel="stylesheet" type="text/css" />
+
+    <style>
+      .mainDiv {
+        display: flex;
+        min-height: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: #f9f9f9;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      .cardStyle {
+        width: 500px;
+        border-color: white;
+        background: #fff;
+        padding: 36px 0;
+        border-radius: 4px;
+        margin: 30px 0;
+        box-shadow: 0px 0 2px 0 rgba(0, 0, 0, 0.25);
+      }
+
+      #signupLogo {
+        max-height: 100px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .formTitle {
+        font-weight: 600;
+        margin-top: 20px;
+        color: #2f2d3b;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- header section starts -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="brand-container me-3">
+          <a
+            class="navbar-brand"
+            href="#"
+            style="
+              font-size: 30px;
+              font-weight: 600;
+              font-family: 'Kanit', sans-serif;
+            "
+            >TWO SECONDZ</a
+          >
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse align-items-center justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <div class="category-container pe-4">
+            <ul class="navbar-nav mb-2 mb-lg-0 text-center">
+              <li class="nav-item">
+                <a class="nav-link me-lg-1" aria-current="page" href="/"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link me-lg-1"
+                  href="/shop"
+                  id="navbarDropdown"
+                  role="button"
+                  >Shop</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link me-lg-1"
+                  href="/contact"
+                  id="navbarDropdown"
+                  role="button"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="right-container d-lg-flex align-items-center">
+            <form class="d-flex">
+              <input
+                class="form-control mr-sm-2"
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+                name="search"
+              />
+              <button
+                type="submit"
+                class="ms-1 bg-light"
+                style="
+                  border: 1px solid rgb(227, 227, 227);
+                  border-radius: 5px;
+                  padding: 5px;
+                "
+                value="search"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+            <div class="user-head pe-4 mt-2 mt-lg-0 mt-md-0 mt-sm-0">
+              <a
+                href=""
+                style="
+                  text-decoration: none;
+                  color: rgb(98, 98, 98);
+                  font-size: 25px;
+                "
+                class="me-2 ms-2"
+                ><i class="head-btn fa-regular fa-heart"></i
+              ></a>
+              <a
+                href="/addtocart"
+                style="
+                  text-decoration: none;
+                  color: rgb(98, 98, 98);
+                  font-size: 25px;
+                "
+                class="me-2"
+                ><i class="head-btn fa-solid fa-cart-shopping"></i
+              ></a>
+              <a
+                href="/my-profile"
+                style="
+                  text-decoration: none;
+                  color: rgb(0, 0, 0);
+                  font-size: 25px;
+                "
+                ><i class="head-btn fa-solid fa-user"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- header section ended -->
+
+    <!-- content section starts -->
+    <div class="mainDiv">
+      <div class="cardStyle">
+        <div class="d-flex justify-content-center align-items-center">
+          <img
+            src="admin-assets/imgs/icons/wallet-icon.png"
+            alt="Admin"
+            class="rounded-circle p-1 img-fluid"
+            width="110"
+          />
+        </div>
+
+        <h4 class="formTitle">Wallet</h4>
+
+        <div class="inputDiv text-center">
+          <h1>&#8377;<%= user.wallet  %></h1>
+        </div>
+       
+      </div>
+    </div>
+ 
+    <!-- content section starts -->
+
+    <script>
+      document.getElementById("copyButton").addEventListener("click", function () {
+    const couponCode = document.getElementById("couponCode").textContent;
+    copyToClipboard(couponCode);
+    updateCopyButton(); // Update the copy button's appearance
+    $('#modalCoupon').modal('hide'); // Close the modal after copying
+  });
+
+  function updateCopyButton() {
+    const copyButton = document.getElementById("copyButton");
+    copyButton.innerHTML = '<i class="fas fa-check ml-1 white-text"></i>';
+    copyButton.disabled = true; // Disable the button after copying
+  }
+
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (error) {
+      console.error("Failed to copy:", error);
+    }
+  }
+    </script>
+  </body>
+</html>

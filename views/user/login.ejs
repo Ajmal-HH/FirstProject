@@ -1,0 +1,149 @@
+<%- include('../layouts/header.ejs') %>
+
+
+<body>
+    <br>
+<br>
+    <div class="cont">
+        <form action="/login" method="post">
+        <div class="form sign-in">
+            <h2>Welcome</h2>
+             <h3 style="color: rgb(232, 71, 71)" ><%=(typeof msg!=='undefined' )?msg:""%></h3>
+            <label>
+                <span>Email</span>
+                <input type="email" name="email" value="ajmal@gmail.com" required/>
+                <p id="email_error" style="color: red;"></p>
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" name="password" value="ajjuajju" required/>
+                <p id="password_error" style="color: red;"></p>
+            </label>
+            <a href="/forgotpassword" style="text-decoration: none;"><p class="forgot-pass">Forgot password?</p></a>
+            <button type="submit" class="submit">Sign In</button>
+        </div>
+    </form>
+      
+        
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                 
+                    <h3>Don't have an account? Please Sign up!<h3>
+                </div>
+                <div class="img__text m--in">
+                
+                    <h3>If you already has an account, just sign in.<h3>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">Sign Up</span>
+                     <span class="m--in">Sign In</span>
+                </div>
+            </div>
+
+
+            <form action="/verifyvalidation" method="POST">
+            <div class="form sign-up">
+                <h2>Create your Account</h2>
+
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="username" id="username" required />
+                    <p id="username_error" style="color: red;"></p>
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" id="email" onblur="validateEmail()" required/>
+                    <p id="email_error" style="color: red;"></p>
+                </label>
+                <label>
+                    <span>Mobile</span>
+                    <input type="tel" name="mobile" id="mobile" required />
+                    <p id="mobile_error" style="color: red;"></p>
+                </label>
+                <label >
+                    <span>Password</span>
+                    <input type="password" name="password" id="password" required />
+                    <p id="password_error" style="color: red;"></p>
+                </label>
+                <button type="submit" class="submit" onclick="return validation()" >Sign Up</button>
+                
+            </div>
+        </form>
+        
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.img__btn').addEventListener('click', function() {
+            document.querySelector('.cont').classList.toggle('s--signup');
+            
+        });
+
+
+        function validation(){
+
+            //to clear error message
+            document.getElementById('username_error').textContent = '';
+            document.getElementById('email_error').textContent ='';
+            document.getElementById('mobile_error').textContent = '';
+            document.getElementById('password_error').textContent ='';
+
+            let username = document.getElementById('username').value;
+            let email = document.getElementById('email').value;
+            let mobile = document.getElementById('mobile').value;
+            let password = document.getElementById('password').value;
+
+            let isValid = true
+
+            if(username.trim() === ''){
+                document.getElementById('username_error').textContent = 'Proper Name is required';
+                isValid = false;
+            }
+            if(email.trim() === ''){
+                document.getElementById('email_error').textContent = 'Proper email is required';
+                isValid = false;
+            }
+            if(mobile.length<=9 || mobile.trim() === ''){
+                document.getElementById('mobile_error').textContent = 'Enter valid mobile number';
+                isValid = false;
+            }
+            if(password.length<=5 || password.trim() === ''){
+                document.getElementById('password_error').textContent = 'Please enter atlist 6 character';
+                isValid = false;
+            }
+
+        
+            var emailInput = document.getElementById("email");
+            var Email = emailInput.value;
+            var regex = /^[a-zA-Z0-9._-]+@gmail\.com$/;
+    
+            if (regex.test(Email)) {
+        
+            } else {
+           // Invalid email address
+        //    alert("Please enter a valid Gmail address (e.g., example@gmail.com).");
+        Toastify({
+              text: "Please enter a valid gmail address (e.g., example@gmail.com).",
+              className: "info",
+              style: {
+                background: "linear-gradient(to right, #020024, #ff0000)",
+              }
+            }).showToast();
+           isValid=false
+          }
+
+            if(isValid){
+                return true
+            }else{
+                return false
+            }
+        }
+
+   
+    </script>
+
+
+</body>
+
+<%- include('../layouts/footer.ejs') %>

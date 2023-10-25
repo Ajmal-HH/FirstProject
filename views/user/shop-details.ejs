@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TWO SECONDZ</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<style>
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+#zoom-image {
+    width: 100%;
+    cursor: crosshair;
+    transition: transform 0.3s ease;
+}
+
+.zoom-image-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.zoom-image-container img {
+    width: 100%;
+    height: auto;
+    cursor: crosshair;
+    transition: transform 0.3s ease;
+}
+
+
+
+</style>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+   <!-- Offcanvas Menu Begin -->
+   <div class="offcanvas-menu-overlay"></div>
+   <div class="offcanvas-menu-wrapper">
+       <div class="offcanvas__option">
+           <div class="offcanvas__links">
+               <a href="/userprofile" ><i class="fa fa-user fa-lg" style="color: #000000;"></i>User</a> 
+           </div>
+          
+       </div>
+       <div class="offcanvas__nav__option">
+           <a href="/wishlist"><img src="img/icon/heart.png" alt=""></a>
+           <a href="/loadcat"><img src="img/icon/cart.png" alt=""> <span></span></a>
+       </div>
+       <div id="mobile-menu-wrap"></div>
+       <div class="offcanvas__text">
+           <p>Free shipping, 30-day return or refund guarantee.</p>
+       </div>
+   </div>
+   <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 30-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                               <a href="/userprofile" ><i class="fa fa-user fa-lg" style="color: #ffffff;"></i>User</a> 
+                    
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="./inex.html"><img src="img/logo1.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li class="active"><a href="/shop">Shop</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/contact">Contacts</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Shop Details Section Begin -->
+    <section class="shop-details">
+        <div class="product__details__pic">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="product__details__breadcrumb">
+                            <a href="/">Home</a>
+                            <a href="/shop?page=0">Shop</a>
+                            <span>Product Details</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                                    <div class="product__thumb__pic set-bg zoom-lens" >
+                                        <img src="admin-assets/uploads/<%= product.image[0]%>" class="zoom-image" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
+                                    <div class="product__thumb__pic set-bg zoom-lens" >
+                                        <img src="admin-assets/uploads/<%= product.image[1]%>"  class="zoom-image" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                    <div class="product__thumb__pic set-bg zoom-lens" >
+                                        <img src="admin-assets/uploads/<%= product.image[2]%>"  class="zoom-image" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-9">
+                        <div class="tab-content">
+                            
+                            <div class="tab-pane active " id="tabs-1" role="tabpanel">    
+                                <div class="product__details__pic__item zoom-lens">  
+                                    <img src="admin-assets/uploads/<%= product.image[0]%>"  class="zoom-image" alt="img">
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="product__details__pic__item zoom-lens">
+                                    <img src="admin-assets/uploads/<%= product.image[1]%>"  class="zoom-image" alt="img">
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                <div class="product__details__pic__item zoom-lens">
+                                    <img src="admin-assets/uploads/<%= product.image[2]%>"  class="zoom-image" alt="img">
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                                    <div class="product__thumb__pic set-bg zoom-lens">
+                                        <img src="admin-assets/uploads/<%= product.image[0]%>"   alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
+                                    <div class="product__thumb__pic set-bg zoom-lens">
+                                        <img src="admin-assets/uploads/<%= product.image[1]%>" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                    <div class="product__thumb__pic set-bg zoom-lens">
+                                        <img src="admin-assets/uploads/<%= product.image[2]%>"  alt="">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-9">
+                        <div class="tab-content">
+                        
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="product__details__pic__item zoom-lens">
+                                    <div class="zoom-image-container">
+                                    <img src="admin-assets/uploads/<%= product.image[0]%>" class="zoom-image" alt="img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="product__details__pic__item zoom-lens">
+                                    <div class="zoom-image-container">
+                                    <img src="admin-assets/uploads/<%= product.image[1]%>" class="zoom-image"  alt="img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                <div class="product__details__pic__item zoom-lens">
+                                    <div class="zoom-image-container">
+                                    <img src="admin-assets/uploads/<%= product.image[2]%>" class="zoom-image"  alt="img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="product__details__content">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="product__details__text">
+                            <h4><%= product.product_name %></h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span> - 5 Reviews</span>
+                            </div>
+                            <h3>₹<%= product.offer_price %><span>₹<%= product.og_price %></span></h3>
+                            <p><%= product.description %></p>
+                            <div class="product__details__option">
+                               
+                               
+                            </div>
+                            <div class="product__details__cart__option">
+                                <!-- <div class="quantity">
+                                    <div class="pro-qty">
+                                        <input type="text" value="1">
+                                    </div>
+                                </div> -->
+                                <a href="/addtocart?id=<%= product._id %>" class="primary-btn" id="addtocart">add to cart</a>
+                            </div>
+                            <div class="product__details__btns__option">
+                                <a href="/addtowishlist?id=<%= product._id %>" id="addtowishlist"><i class="fa fa-heart"></i> add to wishlist</a>
+                                <!-- <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a> -->
+                            </div>
+                            <div class="product__details__last__option">
+                                <h5><span>Guaranteed Safe Checkout</span></h5>
+                                <img src="img/shop-details/details-payment.png" alt="">
+                                <ul>
+                                    <!-- <li><span>SKU:</span> 3812912</li>
+                                    <li><span>Categories:</span> Clothes</li>
+                                    <li><span>Tag:</span> Clothes, Skin, Body</li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <!-- Shop Details Section End -->
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="img/logo1.png" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Special Collections</a></li>
+                            <li><a href="#">Luxury Timepieces</a></li>
+                            <li><a href="#">Men's Watches</a></li>
+                            <li><a href="#">Sale</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Payment Methods</a></li>
+                            <li><a href="#">Delivary</a></li>
+                            <li><a href="#">Return & Exchanges</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>NewLetter</h6>
+                        <div class="footer__newslatter">
+                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <form action="#">
+                                <input type="text" placeholder="Your email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!-- <script>
+        $(document).ready(function () {
+            $(".zoom-image").on("mousemove", function (e) {
+                var $this = $(this);
+                var offset = $this.offset();
+                var x = (e.pageX - offset.left) / $this.width();
+                var y = (e.pageY - offset.top) / $this.height();
+                $this.css({
+                    "transform-origin": x * 100 + "% " + y * 100 + "%",
+                    transform: "scale(1.2)" /* Adjust the zoom level as needed */
+                });
+            }).on("mouseleave", function () {
+                $(this).css({ transform: "scale(1)" });
+            });
+        });
+    </script> -->
+    
+
+    
+
+
+
+    <script>
+        document.getElementById('addtocart').addEventListener('click',function(){
+        Swal.fire({
+            icon: 'success',
+            title: 'Added to Cart',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        })
+
+
+        document.getElementById('addtowishlist').addEventListener('click',function(){
+        Swal.fire({
+            icon: 'success',
+            title: 'Added to Wishlist',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        })
+        </script>
+
+
+
+<script src="script.js"></script>
+        <script>
+const zoomImages = document.querySelectorAll(".zoom-image");
+
+zoomImages.forEach((image) => {
+    image.addEventListener("mousemove", function (event) {
+        const container = image.parentElement;
+        const rect = container.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+        image.style.transformOrigin = `${x * 100}% ${y * 100}%`;
+        image.style.transform = "scale(2)";
+    });
+
+    image.addEventListener("mouseleave", function () {
+        image.style.transform = "scale(1)";
+    });
+});
+
+        </script>
+
+    <!-- <script>
+    let zoomer = function () {
+        document.querySelector('#img-zoomer-box')
+            .addEventListener('mousemove', function (e) {
+                let original = document.querySelector('#selectedImage'),
+                    magnified = document.querySelector('#img-2'),
+                    style = magnified.style,
+                    x = e.pageX - this.offsetLeft,
+                    y = e.pageY - this.offsetTop,
+                    imgWidth = original.offsetWidth,
+                    imgHeight = original.offsetHeight,
+                    xperc = ((x / imgWidth) * 100),
+                    yperc = ((y / imgHeight) * 100);
+
+
+                if (x > (.01 * imgWidth)) {
+                    xperc += (.15 * xperc);
+                };
+
+                if (y >= (.01 * imgHeight)) {
+                    yperc += (.15 * yperc);
+                };
+
+                style.backgroundPositionX = (xperc - 9) + '%';
+                style.backgroundPositionY = (yperc - 9) + '%';
+
+                style.left = (x - 180) + 'px';
+                style.top = (y - 180) + 'px';
+
+            }, false);
+    }();
+</script>
+
+  <style>
+    #img-zoomer-box {
+            max-width: 500px !important;
+            height: auto !important;
+            position: relative !important;
+            margin: 10px auto !important;
+        }
+
+        .selectedImage {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        #img-zoomer-box:hover,
+        #img-zoomer-box:active {
+            cursor: zoom-in !important;
+            display: block !important;
+        }
+
+        #img-zoomer-box:hover #img-2,
+        #img-zoomer-box:active #img-2 {
+            opacity: 1 !important;
+        }
+        .pl-3, .px-3 {
+padding-left: 1rem!important;
+padding-bottom: 9%;
+}
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+margin-left: -3px;
+border-top-left-radius: 0;
+border-bottom-left-radius: 0;
+}
+        #img-2 {
+            width: 350px !important;
+            height: 350px !important;
+            margin-top: -120px;
+            margin-left: -150px;
+            background: url('admin-assets/uploads/<%= product.image[0]%>') no-repeat #FFF;
+            box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.3);
+            pointer-events: none !important;
+            position: absolute !important;
+            opacity: 0;
+            border: 4px solid whitesmoke;
+            z-index: 99;
+            border-radius: 100%;
+            display: block;
+            transition: opacity .2s;
+        }
+  </style> -->
+
+
+</body>
+
+</html>

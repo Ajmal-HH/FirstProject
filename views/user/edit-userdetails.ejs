@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link rel="stylesheet" href="css/edit-userdetails.css">
+<body>
+    <div class="wrapper">
+        <form class="form-signin" action="/updateuser" method="post">       
+          <h2 class="form-signin-heading">Edit your profile</h2>
+          <p style="color: rgb(232, 71, 71)" ><%=(typeof msg!=='undefined' )?msg:""%></p>
+          <input type="text" class="form-control " name="username" placeholder="Username" value="<%= user.username  %>" required="" autofocus="" />
+          <input type="text" class="form-control mt-2" name="email" placeholder="Email Address" value="<%= user.email  %>" required=""/>      
+          <input type="tel" class="form-control mt-2" name="mobile" placeholder="Mobile Number" value="<%= user.mobile  %>" required=""/>      
+        <br>
+          <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Save Changes</button>   
+        </form>
+      </div>
+</body>
+</html>

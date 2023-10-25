@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TWO SECONDZ</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+
+
+    <section class="breadcrumb-option">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="breadcrumb__text">
+                <h4>User name</h4>
+                <div class="breadcrumb__links">
+                  <a href="/">Home</a>
+                  <a href="/shop">Shop</a>
+                  <a href="/loadcart">Shoping cart</a>
+                  <a href="/">Shipping</a>
+                  <a href="/">Checkout</a>
+                  <span>Payment</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Breadcrumb Section End -->
+      <section class="checkout spad">
+        
+              <div class="alert  alert-dismissible fade show" role="alert">
+                  <strong></strong>
+                  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true" >&times;</spam></button>
+              </div>
+         
+      
+          <div class="container">
+              <div class="checkout__form">
+                      <div class="row">
+                          <div class="col-lg-8 col-md-6">
+                              <h6 class="checkout__title">Billing Details</h6>
+                           
+                              <div class="gold-members">
+                                  <div class="media">
+                                      <div class="media-body">
+                                          <p class="text-gray mb-1 " style="font-weight: 900 !important "><%= address[0].address.name%></p>
+                                          <p class="text-gray mb-1"><%= address[0].address.mobile%></p>
+                                          <p class="text-gray mb-1"><%= address[0].address.address%></p>
+                                          <p class="text-gray mb-1"><%= address[0].address.homeaddress%></p>
+                                          <p class="text-gray mb-1"><%= address[0].address.city%></p>
+                                          <p class="text-gray mb-1"><%= address[0].address.state%></p>
+                                          <p class="text-gray mb-1"><%= address[0].address.postcode%></p>
+
+      
+                                          <!-- <p class="text-gray mb-1"><span>Order Note:</span:>hello</p> -->
+      
+                                          <hr>
+                                      </div>
+                                  </div>
+                              </div>
+                            
+                              <h6 class="checkout__title">Product Details</h6>
+                              
+                              <div class="gold-members">
+                                  <div class="media">
+                                      <div class="media-body">
+                                        <% for(let i=0;i<cartitems[0].cart_items.length;i++){ %>
+                                          <p class="text-gray mb-1 " style="font-weight: 900 !important "><%= cartitems[0].cart_items[i].product_name %></p>
+                                          <% } %>
+                                      </div>
+                                  </div>
+                              </div>
+<input id="total" type="hidden" value="<%= total %>">
+                             
+                              <ul class="checkout_total_all">
+                                   <li>Total Payable Amount<span>  ₹ <%= total%></span></li>
+                              </ul>
+      
+                          </div>
+                          <div class="col-lg-4 col-md-6">
+                              <div class="checkout__order">
+                                  <div class="shopping_cart_table">
+                                      <h4 class="order__title">Payment Option</h4>
+                                      <h1><%= address._id%></h1>
+                                      <a  type="button"  id="place_order" onclick="payment('<%= address[0]._id%>'),deleteCartitem('<%= address[0]._id%>')"  class="btn btn-dark btn-lg btn-block  text-light">Cash On Delivery</a>
+                                      <hr>
+                                      <button id="rzp-button" class="btn btn-primary btn-lg btn-block" onclick="Razorpay(),deleteCartitem('<%= address[0]._id%>')">Pay with Razorpay</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+              </div>
+          </div>
+      </section>
+      
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+            document.getElementById('place_order').addEventListener('click',function(){
+            Swal.fire({
+            icon: 'success',
+            title: 'Order Placed',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        })
+    </script>
+
+
+    <script>
+     
+    //     function Placeorder(){
+    //     let address = $('.address:checked').val()
+    //     let payment_method = $('.payment:checked').val()
+    //     $.ajax({
+    //         url : '/placeorder',
+    //         method : 'post',
+    //         data : {
+    //             address : address,
+    //             payment_method : payment_method
+
+    //         }
+    //     })
+    // }
+
+    function deleteCartitem(id){
+        $.ajax({
+            url : '/ordersuccess',
+            method : 'get',
+            
+        })
+    }
+
+    function payment (id){
+     $.ajax({
+        url : '/updateorder',
+        method : 'post'
+     })
+    }
+    </script>
+
+    <script>
+        function Razorpay(){
+            alert("Enter")
+            var total=document.getElementById('total').value
+            alert(total)
+            $.ajax({
+                url:'/razorpay',
+                method:'post',
+                success:(response)=>{
+                    alert("Success" , response)
+                }
+            })
+
+        var options = {
+                       "key": "rzp_test_5Bq77gcuMcGGsb", // Enter the Key ID generated from the Dashboard
+                       "amount": total, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                       "currency": "INR",
+                       "name": "TWO SECONDZ", //your business name
+                       "description": "Test Transaction",
+                       "image": "https://example.com/your_logo",
+                       "order_id": response.order.id, //This is a sample Order ID. Pass the id obtained in the response of Step 1
+                       "handler": function (status){
+                           verifyPayment(status)
+                       },
+                       "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
+                           "name": "Ajmal", //your customer's name
+                           "email": "ajmalajjuartz@gmail.com", 
+                           "contact": "9000090000"  //Provide the customer's phone number for better conversion rates 
+                       },
+                       "notes": {
+                           "address": "Razorpay Corporate Office"
+                       },
+                       "theme": {
+                           "color": "#3399cc"
+                       }
+                   };
+                }
+
+
+
+
+
+    function verifyPayment(){
+        alert('hello')
+     let user=document.getElementById('userId').value
+      $.ajax({
+          url:'/verify-rozorpay',
+          method:'post',
+          data:{
+              
+          },success:(response)=>{
+              
+              if(response.status){
+                  Swal.fire({
+                      title: "Order success",
+                      text: "order placed successfully",
+                      icon: "success",
+                      showCancelButton: true,
+                      confirmButtonText: "view orders",
+                      cancelButtonText: "continue shopping",
+                      reverseButtons: true
+                  }).then(function (result) {
+                      if (result.value) {
+                          
+                        location.href = '/orderDetails';
+                          // result.dismiss can be "cancel", "overlay",
+                          // "close", and "timer"
+                      } else if (result.dismiss === "cancel") {
+                          location.href = '/'
+                      }
+                  });
+              }
+
+          }
+      })
+  }
+    </script>
+</body>
+
+</html>
