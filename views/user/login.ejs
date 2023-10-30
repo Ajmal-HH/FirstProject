@@ -4,6 +4,7 @@
 <body>
     <br>
 <br>
+
     <div class="cont">
         <form action="/login" method="post">
         <div class="form sign-in">
@@ -104,9 +105,9 @@
                 document.getElementById('email_error').textContent = 'Proper email is required';
                 isValid = false;
             }
-            if(mobile.length<=9 || mobile.trim() === ''){
-                document.getElementById('mobile_error').textContent = 'Enter valid mobile number';
-                isValid = false;
+            if((mobile.length<=9 || mobile.length>=11) || typeof(mobile) === "string"  || mobile.trim() === ''){
+            document.getElementById('mobile_error').textContent = 'Enter valid mobile number';
+            isValid = false;
             }
             if(password.length<=5 || password.trim() === ''){
                 document.getElementById('password_error').textContent = 'Please enter atlist 6 character';

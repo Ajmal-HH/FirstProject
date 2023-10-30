@@ -10,13 +10,13 @@ const Banner = require('../model/bannerModel')
 
 
 const accountSid = "AC5523bdf0744cb6957bbeb41640bc9d10";
-const authToken = "b8119f342bffc1e5bb0c585da15d2895";
+const authToken = "a55ab704b1208cc7fe510a9ae5475c33";
 const verifySid = "VA1201188a5b9cbda2e261883ca8efd120";
 const client = require("twilio")(accountSid, authToken);
 
 
 
-const securePassword = async (password)=>{
+const securePassword = async (password)=>{    
     try {
         const passwordHash = await bcrypt.hash(password,10)
         return passwordHash

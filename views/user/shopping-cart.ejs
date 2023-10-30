@@ -207,18 +207,12 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <!-- <div class="cart__discount">
-                        <h6>Discount codes</h6>
-                        <form action="#">
-                            <input type="text" placeholder="Coupon code">
-                            <button type="submit">Apply</button>
-                        </form>
-                    </div> -->
+                  
                     <div class="cart__total">
                         <h6>Cart total</h6>
                         <ul>
                           
-                                <% let total=0; %>
+                                <b % let total=0; %>
                                     <!-- <% cart.cart_items.forEach(item=> { %>
                                       <% let price=item.offer_price * item.quantity; %>
                                         <li
@@ -332,26 +326,7 @@
     <script src="js/main.js"></script>
 
     <script>
-        // function increaseqnty(product_id,quantity,count,user_id){
-        //     alert('hello')
-        //     alert(count)
-        //     $.ajax({
-        //         url:"/changeqnty",
-        //         method:'post',
-        //         data:{
-        //             product_id ,
-        //             quantity,
-        //             count,
-        //             user_id
-        //         },success : (response)=>{
-        //             if(response.status){
-        //                 document.getElementById('quantiyinput').value = response.total
-        //             }
-        //         }
-        //     })
-        // }
-
-
+    
         function stockcheck(){
             $.ajax({
                 url:'/stock-check',
