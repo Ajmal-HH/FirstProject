@@ -479,80 +479,6 @@ const salesReport = async (req, res) => {
 
 
 
-const downloadSalesReport = async (req, res) => {
-    try {
-            const userId = req.session.user_id;
-            const result = await Order.find({delivery_status : "Delivered"})
-          
-            const salesdata=[]
-       for(let i=0;i<result.length;i++){
-           const sales = {
-            order_id : result[i]._id,
-            username : result[i].user_id,
-            product_name : result[i].total_price,
-            date : result[i].order_date
-           }
-           salesdata.push(sales)
-        }
-        console.log(salesdata,"+++++++++++");
-                
-          
-            
-      
-        
-            const options = { year: "numeric", month: "long", day: "numeric" };
-            const data = {
-              customize: {
-                //  "template": fs.readFileSync('template.html', 'base64') // Must be base64 encoded html
-              },
-              images: {
-                // The invoice background
-                background: "",
-              },
-              // Your own data
-              sender: {
-                company: "TWO SECONDZ",
-                address: "Feel your Style",
-                city: "Bangalore",
-                country: "India"
-              },
-              client: {
-                // company: "Customer Address",
-                // "zip": order.name,
-                // "city": order.town,
-                // "address": order.house,
-                // "custom1": "custom value 1",
-                // "custom2": "custom value 2",
-                // "custom3": "custom value 3"
-              },
-              information: {
-                 //number: "order" + order.id,
-                // date: result.order_date.toLocaleDateString(),
-              },
-              order : salesdata,
-              "bottom-notice": "Happy shoping and visit Two Secondz again",
-            };
-        let pdfResult = await easyinvoice.createInvoice(data);
-            const pdfBuffer = Buffer.from(pdfResult.pdf, "base64");
-        
-            // Set HTTP headers for the PDF response
-            res.setHeader("Content-Disposition", 'attachment; filename="invoice.pdf"');
-            res.setHeader("Content-Type", "application/pdf");
-        
-            // Create a readable stream from the PDF buffer and pipe it to the response
-            const pdfStream = new Readable();
-            pdfStream.push(pdfBuffer);
-            pdfStream.push(null);
-        
-            pdfStream.pipe(res);
-          } catch (error) {
-            console.log(error);
-            res.status(500).json({ error: error.message });
-          }
-  
-};
-
-
 
 
 
@@ -570,7 +496,6 @@ module.exports = {
     bannerList,
     loadSalesReport,
     salesReport,
-    downloadSalesReport
 
     
 }

@@ -83,9 +83,7 @@ user_router.post('/addaddress-checkout',cartController.Addaddress)
 user_router.post('/stock-check' , cartController.CheckStock)
 
 
-//user_router.get('/payment',auth.isLogin,auth.is_blocked,orderController.addOrder)
 user_router.post('/placeorder',orderController.orderDetails)
-//user_router.get('/ordersuccess',orderController.orderSuccess)
 user_router.post('/updateorder',auth.isLogin,orderController.updateOrder)
 user_router.get('/loadorderlist',auth.isLogin,orderController.loadOrderlist)
 user_router.get('/orderdetails',auth.isLogin,orderController.orderListDetails)

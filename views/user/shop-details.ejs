@@ -122,8 +122,8 @@
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
-                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <a href="/wishlist"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="/loadcat"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
                     </div>
                 </div>
             </div>
@@ -271,16 +271,15 @@
                                
                             </div>
                             <div class="product__details__cart__option">
-                                <!-- <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" value="1">
-                                    </div>
-                                </div> -->
+                              
+                                <% if(product.stock === 0){ %>
+                                    <button class="btn btn-danger"> Out of Stock </button>
+                                <% }else{ %>
                                 <a href="/addtocart?id=<%= product._id %>" class="primary-btn" id="addtocart">add to cart</a>
                             </div>
+                            <% } %>
                             <div class="product__details__btns__option">
                                 <a href="/addtowishlist?id=<%= product._id %>" id="addtowishlist"><i class="fa fa-heart"></i> add to wishlist</a>
-                                <!-- <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a> -->
                             </div>
                             <div class="product__details__last__option">
                                 <h5><span>Guaranteed Safe Checkout</span></h5>

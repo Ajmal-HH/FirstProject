@@ -105,7 +105,7 @@ const changePassword = async (req,res)=> {
         }  else{
             res.render('user-changePass',{msg : "current password is incorrect"})
         }                  
-    } catch (error) {
+    } catch (error) {                       
         console.log(error.message);
     }
 }

@@ -37,7 +37,6 @@ const addCoupon = async (req,res)=>{
         const coupons = await Coupon.find({})
         const coupon = req.body.coupon
         let coupondis = await Coupon.findOne({coupon_name : coupon})
-        // console.log(coupondis.offer,"?????");
         res.render('checkout',{cart,user,coupons,coupondis})
     } catch (error) {
         console.log(error.message);

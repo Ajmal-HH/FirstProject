@@ -41,7 +41,7 @@ const orderStatus = async (req,res)=>{
 
     } catch (error) {    
        console.log(error.message);    
-    }
+    } 
 }    
 
 module.exports = {

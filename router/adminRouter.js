@@ -104,7 +104,6 @@ admin_router.get('/bannerlist',adminauth.isLogin,adminController.bannerList)
 
 admin_router.get('/loadsales-report',adminauth.isLogin,adminController.loadSalesReport)
 admin_router.get('/sales-report',adminauth.isLogin,adminController.salesReport)
-admin_router.get('/down-salesreport',adminauth.isLogin,adminController.downloadSalesReport)
 
         
 module.exports = admin_router

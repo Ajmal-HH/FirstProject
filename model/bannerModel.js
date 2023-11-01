@@ -5,7 +5,7 @@ const bannerSchema = mongoose.Schema({
         type : String,
         require : true
     },
-    is_listed : {
+    is_listed : {       
         type : Boolean,
         require : true
     }

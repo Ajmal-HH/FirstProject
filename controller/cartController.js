@@ -43,11 +43,9 @@ const AddToCart = async (req,res)=>{
         if(existItem){
             existItem.quantity+=1
             findcart.save()
-           // res.json({ output: true });
         }else{
             findcart.cart_items.push(cart_items)
             await findcart.save()
-           // res.json({output : true})
         }
      }else{
         const newitem = new Cart({
@@ -56,7 +54,6 @@ const AddToCart = async (req,res)=>{
         }) 
         newitem.cart_items.push(cart_items)
         await newitem.save() 
-       //res.json({output : true})
      }
     } catch (error) {
         console.log(error.message);

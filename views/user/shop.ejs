@@ -200,7 +200,11 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6><%= product[i].product_name %></h6>
+                                    <% if(product[i].stock === 0){ %>
+                                        <a  class="add-cart" >Out of Stock</a>
+                                        <% }else{ %>
                                     <a href="/addtocart?id=<%= product[i]._id %>" class="add-cart" id="addtocart">+ Add To Cart</a>
+                                    <% } %>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>

@@ -1,3 +1,5 @@
+const dotenv = require('dotenv')
+dotenv.config()
 const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://ajmalajjuartz:VcD6fyNJ57K0Ai9x@cluster0.nzjdiia.mongodb.net/TWOSECONDZ')
 

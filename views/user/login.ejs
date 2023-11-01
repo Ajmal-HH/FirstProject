@@ -105,7 +105,7 @@
                 document.getElementById('email_error').textContent = 'Proper email is required';
                 isValid = false;
             }
-            if((mobile.length<=9 || mobile.length>=11) || typeof(mobile) === "string"  || mobile.trim() === ''){
+            if((mobile.length<=9 || mobile.length>=11) || mobile.trim() === ''){
             document.getElementById('mobile_error').textContent = 'Enter valid mobile number';
             isValid = false;
             }

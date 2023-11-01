@@ -57,18 +57,7 @@ const orderDetails = async (req,res) =>{
                 $inc : {stock : -order.product_details[i].quantity}
             })
         }
-        // const productIds = order.product_details.map(item => item.product_id);
-        // const quantities = order.product_details.map(item => item.quantity);
-        
-        // await Product.updateMany(
-        //   { _id: { $in: productIds } },
-        //   {
-        //     $inc: { stock: -1 * { $zip: { inputs: quantities } } }
-        //   }
-        // );
-
-
-
+      
         if(order.payment_type == 'cod'){
             res.json({cod:true})
         }else if(order.payment_type == 'Razorpay'){
@@ -106,46 +95,6 @@ const orderDetails = async (req,res) =>{
     }
 }
 
-
-
-// const addOrder = async (req,res)=>{
-//     try {
-//         let addid = req.query.address
-//         addid = parseInt(addid)
-//         const oid = new mongodb.ObjectId(req.session.user_id)
-//         const cartitems = await Cart.find({user_id : req.session.user_id})
-//         const address  = await User.aggregate([
-//             {
-//                 $match : {_id :oid}
-//             },
-//             {
-//                 $unwind : '$address'
-//             },
-//             {
-//                 $match : {'address.id' : addid}
-//             }
-//         ])   
-//        const total = req.query.total;
-//         res.render('payment',{address,cartitems,total})
-//     } catch (error) {
-//         console.log(error.message);
-//     }
-// }
-
-
-
-// const orderSuccess = async (req,res)=>{
-//     try {
-//         const id = new mongodb.ObjectId(req.session.user_id)
-//         const cart = await Cart.deleteOne(
-//             { user_id: id}
-//           );
-                  
-//     } catch (error) {
-//        console.log(error.message); 
-//     }
-    
-// }
 
 
 const updateOrder = async (req,res)=>{
@@ -235,7 +184,6 @@ const rozorpay = async (req,res)=>{
 }
 const VerifyPayment = async(req,res)=>{
     try{
-        //const userSession = req.session.user_id
         details = req.body;
         const crypto = require('crypto');
         let hmac = crypto.createHmac('sha256' , 'Y0UJeyTaRLN1dWjpxoPVn4tP')
@@ -262,12 +210,6 @@ const returnOrder = async (req,res)=>{
 
             res.json({status : true})
 
-      
-            // if(payment!=='cod'){
-            //     const wallet = await User.findByIdAndUpdate({_id : user_id},{
-            //         $inc : {wallet : +total}
-            //     })
-           // }
     } catch (error) {
         
     }
