@@ -12,8 +12,8 @@ const {Readable} = require('stream')
 
 
 let instance = new Razorpay({
-    key_id: 'rzp_test_5Bq77gcuMcGGsb',
-    key_secret: 'Y0UJeyTaRLN1dWjpxoPVn4tP',
+    key_id: process.env.RAZOR_PAY_ID_KEY,
+    key_secret: process.env.RAZOR_PAY_SECRET_KEY,
 });
 
 

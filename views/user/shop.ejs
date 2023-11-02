@@ -89,7 +89,6 @@
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
-                        <!-- <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a> -->
                         <a href="/wishlist"><img src="img/icon/heart.png" alt=""></a>
                         <a href="/loadcat"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
                     </div>
@@ -171,11 +170,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__right">
                                     <p>Sort by Price:</p>
-                                    <!-- <select id="mySelect" onchange="redirectToSelectedPage()"> -->
-                                    <!-- <select>
-                                        <option><a href="/lowtohigh"></a>Low To High</a></option>
-                                       <option> <a href="/hightolow"></a>High To Low</a></option>
-                                    </select> -->
+                                   
                                     <select onchange="window.location.href = this.value;">
                                         <option value="/lowtohigh?page=0">Low To High</option>
                                         <option value="/hightolow?page=0">High To Low</option>
@@ -339,15 +334,7 @@
         })
         </script>
 
-<!-- <script>
-    function redirectToSelectedPage() {
-        var select = document.getElementById("mySelect");
-        var selectedOption = select.options[select.selectedIndex];
-        if (selectedOption.value) {
-            window.location = selectedOption.value;
-        }
-    }
-</script> -->
+
 </body>
 
 </html>

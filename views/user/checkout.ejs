@@ -339,7 +339,6 @@
                                     </label>
                                     <% } %>
                                 </div>
-                                <!-- <a href="" onclick="addAddressToURL(),Orderdetails('<%= total%>')" id="url" class="site-btn text-light text-center">PLACE ORDER</a> -->
                                 <a onclick="Placeorder()"  class="site-btn text-light text-center">PLACE ORDER</a>
                                 <h3 style="color: rgb(232, 71, 71)" ><%=(typeof msg!=='undefined' )?msg:""%></h3>
 
@@ -445,31 +444,7 @@
 
     <script>
 
-// function addAddressToURL() {
-//     var address = $('input[name="address"]:checked').val();
-//     var totalElement = document.getElementById('total'); // Get the total element
-//     var total = totalElement.value; // Get the value of the total element
 
-//     var newURL = "/payment?address=" + address + "&total=" + total; // Corrected URL construction
-//     var anchorElement = document.getElementById("url");
-//     anchorElement.href = newURL;
-// }
-
-
-
-     
-//      function Orderdetails(total){
-//      let address = $('.address:checked').val()
-//      alert(total)
-//      $.ajax({
-//          url : '/placeorder',
-//          method : 'post',
-//          data : {
-//              address : address,
-//              total : total
-//          }
-//      })
-//  }
 
       function Placeorder(){
         let address = $('.address:checked').val()
@@ -590,23 +565,12 @@
       })
 
 
-    // Swal.fire({
-    //         icon: 'success',
-    //         title: 'Order Placed',
-    //         showConfirmButton: false,
-    //         timer: 1500
-    // })
+   
   }
 
 
 
-    // function deleteCartitem(id){
-    //     $.ajax({
-    //         url : '/ordersuccess',
-    //         method : 'get',
-            
-    //     })
-    // }
+   
  
     </script>
   

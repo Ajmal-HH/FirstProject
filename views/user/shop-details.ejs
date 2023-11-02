@@ -145,55 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="row">
-                    <div class="col-lg-3 col-md-3">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <div class="product__thumb__pic set-bg zoom-lens" >
-                                        <img src="admin-assets/uploads/<%= product.image[0]%>" class="zoom-image" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <div class="product__thumb__pic set-bg zoom-lens" >
-                                        <img src="admin-assets/uploads/<%= product.image[1]%>"  class="zoom-image" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <div class="product__thumb__pic set-bg zoom-lens" >
-                                        <img src="admin-assets/uploads/<%= product.image[2]%>"  class="zoom-image" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                           
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-md-9">
-                        <div class="tab-content">
-                            
-                            <div class="tab-pane active " id="tabs-1" role="tabpanel">    
-                                <div class="product__details__pic__item zoom-lens">  
-                                    <img src="admin-assets/uploads/<%= product.image[0]%>"  class="zoom-image" alt="img">
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                <div class="product__details__pic__item zoom-lens">
-                                    <img src="admin-assets/uploads/<%= product.image[1]%>"  class="zoom-image" alt="img">
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tabs-3" role="tabpanel">
-                                <div class="product__details__pic__item zoom-lens">
-                                    <img src="admin-assets/uploads/<%= product.image[2]%>"  class="zoom-image" alt="img">
-                                </div>
-                            </div>
-                        
-                        </div>
-                    </div>
-                </div> -->
+               
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <ul class="nav nav-tabs" role="tablist">
@@ -285,9 +237,7 @@
                                 <h5><span>Guaranteed Safe Checkout</span></h5>
                                 <img src="img/shop-details/details-payment.png" alt="">
                                 <ul>
-                                    <!-- <li><span>SKU:</span> 3812912</li>
-                                    <li><span>Categories:</span> Clothes</li>
-                                    <li><span>Tag:</span> Clothes, Skin, Body</li> -->
+                                  -->
                                 </ul>
                             </div>
                         </div>
@@ -393,23 +343,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-    <!-- <script>
-        $(document).ready(function () {
-            $(".zoom-image").on("mousemove", function (e) {
-                var $this = $(this);
-                var offset = $this.offset();
-                var x = (e.pageX - offset.left) / $this.width();
-                var y = (e.pageY - offset.top) / $this.height();
-                $this.css({
-                    "transform-origin": x * 100 + "% " + y * 100 + "%",
-                    transform: "scale(1.2)" /* Adjust the zoom level as needed */
-                });
-            }).on("mouseleave", function () {
-                $(this).css({ transform: "scale(1)" });
-            });
-        });
-    </script> -->
-    
+   
 
     
 
@@ -458,89 +392,6 @@ zoomImages.forEach((image) => {
 });
 
         </script>
-
-    <!-- <script>
-    let zoomer = function () {
-        document.querySelector('#img-zoomer-box')
-            .addEventListener('mousemove', function (e) {
-                let original = document.querySelector('#selectedImage'),
-                    magnified = document.querySelector('#img-2'),
-                    style = magnified.style,
-                    x = e.pageX - this.offsetLeft,
-                    y = e.pageY - this.offsetTop,
-                    imgWidth = original.offsetWidth,
-                    imgHeight = original.offsetHeight,
-                    xperc = ((x / imgWidth) * 100),
-                    yperc = ((y / imgHeight) * 100);
-
-
-                if (x > (.01 * imgWidth)) {
-                    xperc += (.15 * xperc);
-                };
-
-                if (y >= (.01 * imgHeight)) {
-                    yperc += (.15 * yperc);
-                };
-
-                style.backgroundPositionX = (xperc - 9) + '%';
-                style.backgroundPositionY = (yperc - 9) + '%';
-
-                style.left = (x - 180) + 'px';
-                style.top = (y - 180) + 'px';
-
-            }, false);
-    }();
-</script>
-
-  <style>
-    #img-zoomer-box {
-            max-width: 500px !important;
-            height: auto !important;
-            position: relative !important;
-            margin: 10px auto !important;
-        }
-
-        .selectedImage {
-            width: 100% !important;
-            height: auto !important;
-        }
-
-        #img-zoomer-box:hover,
-        #img-zoomer-box:active {
-            cursor: zoom-in !important;
-            display: block !important;
-        }
-
-        #img-zoomer-box:hover #img-2,
-        #img-zoomer-box:active #img-2 {
-            opacity: 1 !important;
-        }
-        .pl-3, .px-3 {
-padding-left: 1rem!important;
-padding-bottom: 9%;
-}
-.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-margin-left: -3px;
-border-top-left-radius: 0;
-border-bottom-left-radius: 0;
-}
-        #img-2 {
-            width: 350px !important;
-            height: 350px !important;
-            margin-top: -120px;
-            margin-left: -150px;
-            background: url('admin-assets/uploads/<%= product.image[0]%>') no-repeat #FFF;
-            box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.3);
-            pointer-events: none !important;
-            position: absolute !important;
-            opacity: 0;
-            border: 4px solid whitesmoke;
-            z-index: 99;
-            border-radius: 100%;
-            display: block;
-            transition: opacity .2s;
-        }
-  </style> -->
 
 
 </body>
