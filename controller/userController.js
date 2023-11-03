@@ -9,12 +9,10 @@ const Banner = require('../model/bannerModel')
 
 
 
-const accountSid = "AC5523bdf0744cb6957bbeb41640bc9d10";
+const accountSid = "AC878fb142754211e8ca8725e740b14636";
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const verifySid = "VA1201188a5b9cbda2e261883ca8efd120";
+const verifySid = "VAe6f1d843c0f443981c86d3811cc2b68f";
 const client = require("twilio")(accountSid, authToken);
-
-
 
 
 
