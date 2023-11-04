@@ -77,7 +77,7 @@ admin_router.post('/editcategory',adminauth.isLogin,uploadprdt.single("category_
 //product
 admin_router.get('/product',adminauth.isLogin,productController.loadAddProduct)
 admin_router.post('/product',uploadprdt.array("image"),productController.addProduct)
-admin_router.get('/productlist',productController.loadProductList) 
+admin_router.get('/productlist',productController.loadProductList)
 admin_router.get('/listproduct',productController.listProduct)
 admin_router.get('/unlistproduct',productController.unlistProduct)
 admin_router.get('/editproduct',productController.editProduct)

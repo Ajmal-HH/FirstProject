@@ -141,7 +141,7 @@ const verifyOtp = async (req, res) => {
                     try {
                         const userDataSave = await user.save();
                         if (userDataSave) {
-                            res.redirect('/');
+                            res.redirect('/login');
                         } else {
                             res.render('login', { msg: "Registration Failed" });
                         }
@@ -191,7 +191,7 @@ const verifyLogin = async (req,res)=>{
                 }
                 
             }else{
-                res.render('login',{msg:"username and password is incorrect"})
+                res.render('login',{msg:"username or password is incorrect"})
             }
         }else{
             res.render('login',{msg:"Invalid User"})
