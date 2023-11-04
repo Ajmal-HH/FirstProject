@@ -41,8 +41,8 @@ user_router.get('/login',auth.isLogout,userController.loadLogin)
 user_router.post('/login',userController.verifyLogin)
 user_router.get('/',userController.homepage)
 user_router.get('/homepage',userController.homepage)
-user_router.get('/about',auth.isLogin,userController.aboutPage)
-user_router.get('/contact',auth.isLogin,userController.Contact)
+user_router.get('/about',userController.aboutPage)
+user_router.get('/contact',userController.Contact)
 
 
 user_router.get('/forgotpassword',userController.forgotPassword)
