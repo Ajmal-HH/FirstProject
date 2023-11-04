@@ -33,7 +33,7 @@ const orderStatus = async (req,res)=>{
             {$set : {delivery_status : data}})
 
             if(data=='Return'){   
-                const wallet = await User.findByIdAndUpdate({_id : req.session.user_id},{
+                const wallet = await User.findByIdAndUpdate({_id : order.user_id},{
                     $inc : {wallet : +order.total_price}
                 })
             }
